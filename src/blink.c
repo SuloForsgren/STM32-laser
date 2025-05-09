@@ -1,14 +1,14 @@
 #include "../include/blink/blink.h"
-#include "../include/definitions/definitions.h"
 
-void blink(int set_bit) 
+void delay(volatile unsigned int count) {
+    while (count--) {
+        __asm__("nop");
+    }
+}
+
+void blink() 
 {
-    if (set_bit == 0) 
-    {
-        GPIOC_BSRR |= (1 << 13);
-    }
-    else if (set_bit == 1) 
-    {
-        GPIOC_BSRR |= (1 << 29);
-    }
+    GPIOC_BSRR |= (1 << 13);
+    delay(250000);
+    GPIOC_BSRR |= (1 << 29);
 }

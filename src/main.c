@@ -1,27 +1,26 @@
-#include "../include/definitions/definitions.h"
 #include "../include/blink/blink.h"
 #include "../include/init/init.h"
 
-void delay(volatile unsigned int count) {
-    while (count--) {
-        __asm__("nop");
-    }
+void blink_led() 
+{
+    // Turn led on
+    blink(GPIOC_BSRR);
+    delay(500000);
+    
+    // Turn led off
+    blink(GPIOC_BSRR);
+    delay(500000);
 }
 
 
 int main(void) {
-    gpio_init();
-    int set_bit = 0;
+    gpio_init(RCC_APB2ENR, GPIOC_CRH);
 
     while (1) 
     {
-        blink(set_bit);
-        set_bit = 1;
-        delay(500000);
-        
-        blink(set_bit);
-        set_bit = 0;
-        delay(500000);
+        blink();
+        delay(1000000);
     }
+
     return 0;
 }

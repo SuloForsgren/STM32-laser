@@ -1,8 +1,9 @@
 #ifndef BLINK_H
 #define BLINK_H
 
-#include "../definitions/definitions.h"
+#define GPIOC_BSRR (*(volatile unsigned int*)0x40011010)
 
-void blink(int set_bit);
+void delay(volatile unsigned int count);
+void blink();
 
 #endif
