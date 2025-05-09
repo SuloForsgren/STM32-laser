@@ -19,7 +19,6 @@ int main(void) {
     while (1) 
     {
         blink();
-        delay(1000000);
     }
 
     return 0;
