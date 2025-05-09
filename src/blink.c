@@ -1,4 +1,5 @@
 #include "../include/blink/blink.h"
+#include "../include/definitions/definitions.h"
 
 void blink(int set_bit) 
 {

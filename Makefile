@@ -6,7 +6,7 @@ INCLUDE_DIR = include
 BLINK_DIR = blink
 
 # Src to c and assembly files
-SRCS = src/*.c
+SRCS := $(wildcard src/*.c)
 OBJS = $(SRCS:.c=.o)
 
 # Define Cross Compiling

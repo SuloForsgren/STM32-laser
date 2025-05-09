@@ -1,5 +1,5 @@
-#include "../include/blink/blink.h"
 #include "../include/definitions/definitions.h"
+#include "../include/blink/blink.h"
 #include "../include/init/init.h"
 
 void delay(volatile unsigned int count) {
