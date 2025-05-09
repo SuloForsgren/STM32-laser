@@ -1,8 +1,12 @@
 # Define the target eg. main.elf
 TARGET = main
 
+INCLUDE_DIR = include
+
+BLINK_DIR = blink
+
 # Src to c and assembly files
-SRCS = src/main.c src/startup.c
+SRCS = src/*.c
 OBJS = $(SRCS:.c=.o)
 
 # Define Cross Compiling
@@ -10,7 +14,7 @@ CC = arm-none-eabi-gcc
 OBJCOPY = arm-none-eabi-objcopy
 
 # Set flags
-CFLAGS = -mcpu=cortex-m3 -mthumb -Wall -g -O0
+CFLAGS = -mcpu=cortex-m3 -mthumb -Wall -g -O0 -I$(INCLUDE_DIR)/$(BLINK_DIR)
 LDFLAGS = -TSTM32F103C8.ld -nostartfiles
 
 all: $(TARGET).elf
@@ -23,6 +27,7 @@ $(TARGET).elf: $(OBJS)
 # Clean the directory if needed
 clean:
 	rm -f *.o *.hex *.bin *.elf
+	rm -f src/*.o
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
