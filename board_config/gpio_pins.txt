@@ -1,0 +1,25 @@
+Pin definitions for easy lookup
+
+===================
+Relay pins:
+PA0 -->     RelayX
+PA1 -->     RelayY
+PA2 -->     RelayZ
+PA3 -->     Relay-
+PA4 -->     Relay-
+===================
+
+===================
+Motor pins:
+PA8 -->     x_step
+PA9 -->     y_step
+PA10 -->    z_step
+
+PB3 -->     x_dir
+PB4 -->     y_dir
+PB5 -->     z_dir
+
+PB13 -->    x_en
+PB14 -->    y_en
+PB15 -->    z_en
+===================

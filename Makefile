@@ -19,20 +19,21 @@ LDFLAGS = -TSTM32F103C8.ld -nostartfiles
 
 UNAME_S := $(shell uname -s)
 
-all: $(TARGET).elf
+# Make the target, flash to stm32 and clean
+all: $(TARGET).elf flash clean
 
 $(TARGET).elf: $(OBJS)
 	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^
 	$(OBJCOPY) -O ihex $@ $(TARGET).hex
 	$(OBJCOPY) -O binary $@ $(TARGET).bin
 
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
 # Clean the directory if needed
 clean:
 	rm -f *.o *.hex *.bin *.elf
 	rm -f src/*.o
-
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
 
 # Flashing rules for picoprobe --> openocd
 flash: $(TARGET).elf

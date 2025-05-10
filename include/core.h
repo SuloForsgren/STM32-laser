@@ -4,6 +4,4 @@
 // Delay used with the board
 void delay(volatile unsigned int count);
 
-
-
 #endif
