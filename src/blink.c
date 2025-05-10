@@ -1,10 +1,5 @@
-#include "../include/blink/blink.h"
-
-void delay(volatile unsigned int count) {
-    while (count--) {
-        __asm__("nop");
-    }
-}
+#include "../include/blink.h"
+#include "../include/core.h"
 
 void blink() 
 {

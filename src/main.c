@@ -1,5 +1,6 @@
-#include "../include/blink/blink.h"
-#include "../include/init/init.h"
+#include "../include/blink.h"
+#include "../include/init.h"
+#include "../include/core.h"
 
 void blink_led() 
 {

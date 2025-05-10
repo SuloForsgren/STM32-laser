@@ -1,4 +1,4 @@
-#include "../include/init/init.h"
+#include "../include/init.h"
 
 void gpio_init() 
 {

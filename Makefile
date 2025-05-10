@@ -17,6 +17,8 @@ OBJCOPY = arm-none-eabi-objcopy
 CFLAGS = -mcpu=cortex-m3 -mthumb -Wall -g -O0 -I$(INCLUDE_DIR)/$(BLINK_DIR)
 LDFLAGS = -TSTM32F103C8.ld -nostartfiles
 
+UNAME_S := $(shell uname -s)
+
 all: $(TARGET).elf
 
 $(TARGET).elf: $(OBJS)
@@ -34,5 +36,5 @@ clean:
 
 # Flashing rules for picoprobe --> openocd
 flash: $(TARGET).elf
-	openocd -f /usr/share/openocd/scripts/interface/cmsis-dap.cfg -f /usr/share/openocd/scripts/target/stm32f1x.cfg \
+	openocd -f ./board_config/cmsis-dap.cfg -f ./board_config/stm32f1x.cfg \
 		-c "program $(TARGET).elf verify reset exit"
