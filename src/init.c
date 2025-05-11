@@ -11,7 +11,7 @@ void blink_init()
 
 void timer_init() 
 {
-    // Timer clock = 1mhz, 20ms period as 50hz and 1.5ms pulse
+    // Timer clock = 1mhz, 20ms period as 50hz and 1.5ms / pulse
     TIM1_PSC = 72 -1;
     TIM1_ARR = 20000 - 1;
     TIM1_CCR1 = 1500;
@@ -34,4 +34,8 @@ void motor_init()
     timer_init();
     
     GPIOA_CRH |= (0x3F3 << 0) | (0x3F3 << 4) | (0x3F3 << 8);
+    GPIOA_CRL |= (10 << 0) | (10 << 4) | (10 << 8);
+    
+    GPIOB_CRL |= (10 << 12) | (10 << 16) | (10 << 20);
+    GPIOB_CRH |= (10 << 20) | (10 << 24) | (10 << 28);
 }
