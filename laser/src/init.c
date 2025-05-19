@@ -1,4 +1,4 @@
-#include "../../include/laser/init.h"
+#include "../include/init.h"
 
 // Blink init
 void blink_init() 

@@ -2,11 +2,12 @@
 TARGET = main
 
 INCLUDE_DIR = include
-
 BLINK_DIR = blink
 
+LINKER = laser/board_config/STM32F103C8.ld
+
 # Src to c and assembly files
-SRCS := $(wildcard src/laser/*.c)
+SRCS := $(wildcard laser/src/*.c)
 OBJS = $(SRCS:.c=.o)
 
 # Define Cross Compiling
@@ -15,7 +16,7 @@ OBJCOPY = arm-none-eabi-objcopy
 
 # Set flags
 CFLAGS = -mcpu=cortex-m3 -mthumb -Wall -g -O0 -I$(INCLUDE_DIR)/$(BLINK_DIR)
-LDFLAGS = -TSTM32F103C8.ld -nostartfiles
+LDFLAGS = -T$(LINKER) -nostartfiles
 
 UNAME_S := $(shell uname -s)
 
@@ -33,9 +34,9 @@ $(TARGET).elf: $(OBJS)
 # Clean the directory if needed
 clean:
 	rm -f *.o *.hex *.bin *.elf
-	rm -f src/*/*.o
+	rm -f laser/src/*.o
 
 # Flashing rules for picoprobe --> openocd
 flash: $(TARGET).elf
-	openocd -f ./board_config/cmsis-dap.cfg -f ./board_config/stm32f1x.cfg \
+	openocd -f ./laser/board_config/cmsis-dap.cfg -f ./laser/board_config/stm32f1x.cfg \
 		-c "program $(TARGET).elf verify reset exit"

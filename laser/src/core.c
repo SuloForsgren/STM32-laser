@@ -1,4 +1,4 @@
-#include "../../include/laser/core.h"
+#include "../include/core.h"
 
 void delay(volatile unsigned int count) 
 {

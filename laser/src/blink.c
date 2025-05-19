@@ -1,5 +1,5 @@
-#include "../../include/laser/blink.h"
-#include "../../include/laser/core.h"
+#include "../include/blink.h"
+#include "../include/core.h"
 
 void blink() 
 {

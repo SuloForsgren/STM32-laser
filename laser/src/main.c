@@ -1,7 +1,7 @@
-#include "../../include/laser/blink.h"
-#include "../../include/laser/init.h"
-#include "../../include/laser/core.h"
-#include "../../include/laser/motor.h"
+#include "../include/blink.h"
+#include "../include/init.h"
+#include "../include/core.h"
+#include "../include/motor.h"
 
 #include <stdbool.h>
 

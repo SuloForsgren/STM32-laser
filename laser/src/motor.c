@@ -1,4 +1,4 @@
-#include "../../include/laser/motor.h"
+#include "../include/motor.h"
 
 
 void move_motor_x(bool direction, int steps) 
