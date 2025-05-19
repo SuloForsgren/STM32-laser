@@ -1,4 +1,4 @@
-#include "../include/init.h"
+#include "../../include/laser/init.h"
 
 // Blink init
 void blink_init() 
@@ -34,7 +34,7 @@ void motor_init()
     timer_init();
     
     GPIOA_CRH |= (0x3F3 << 0) | (0x3F3 << 4) | (0x3F3 << 8);
-    GPIOA_CRL |= (10 << 0) | (10 << 4) | (10 << 8);
+    GPIOA_CRL |= (0x3F2 << 0) | (0x3F2 << 4) | (0x3F2 << 8);
     
     GPIOB_CRL |= (10 << 12) | (10 << 16) | (10 << 20);
     GPIOB_CRH |= (10 << 20) | (10 << 24) | (10 << 28);

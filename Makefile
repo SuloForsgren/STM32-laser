@@ -6,7 +6,7 @@ INCLUDE_DIR = include
 BLINK_DIR = blink
 
 # Src to c and assembly files
-SRCS := $(wildcard src/*.c)
+SRCS := $(wildcard src/*/*.c)
 OBJS = $(SRCS:.c=.o)
 
 # Define Cross Compiling
@@ -33,7 +33,7 @@ $(TARGET).elf: $(OBJS)
 # Clean the directory if needed
 clean:
 	rm -f *.o *.hex *.bin *.elf
-	rm -f src/*.o
+	rm -f src/*/*.o
 
 # Flashing rules for picoprobe --> openocd
 flash: $(TARGET).elf
