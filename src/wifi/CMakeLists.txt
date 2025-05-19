@@ -1,4 +1,6 @@
-add_executable(wifi_bridge wifi.c)
+add_executable(wifi_bridge
+    wifi.c
+)
 
 target_link_libraries(wifi_bridge
     pico_stdlib
