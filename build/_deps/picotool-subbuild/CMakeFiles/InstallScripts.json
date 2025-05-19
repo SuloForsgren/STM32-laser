@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/sulo/dev/programming/iot/laser/STM32-laser/build/_deps/picotool-subbuild/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
