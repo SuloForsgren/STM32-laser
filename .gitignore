@@ -2,5 +2,8 @@
 *.hex
 *.bin
 *.elf
-build/
+.idea
+
 .vscode/
+build/
+cmake-build-debug/
