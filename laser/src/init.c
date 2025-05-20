@@ -39,3 +39,9 @@ void motor_init()
     GPIOB_CRL |= (10 << 12) | (10 << 16) | (10 << 20);
     GPIOB_CRH |= (10 << 20) | (10 << 24) | (10 << 28);
 }
+
+void usart_init() 
+{
+    RCC_APB2ENR |= (1 << 14);
+    
+}

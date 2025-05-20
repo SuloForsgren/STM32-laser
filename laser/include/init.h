@@ -24,5 +24,6 @@
 
 void blink_init();
 void motor_init();
+void usart_init();
 
 #endif
