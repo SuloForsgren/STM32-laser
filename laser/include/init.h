@@ -22,7 +22,6 @@
 #define TIM1_CR1 (*(volatile unsigned int*)0x40012C00)
 #define TIM1_BDTR (*(volatile unsigned int*)0x40012C44)
 
-
 void blink_init();
 void motor_init();
 
